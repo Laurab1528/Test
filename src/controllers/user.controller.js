@@ -2,7 +2,7 @@ import {UsuarioService} from '../services/usuario.service.js';
 import {sendGmail} from "../utils/notifications/gmail/EmailSender.js";
 import {htmlNewUserTemplate} from "../utils/notifications/gmail/htmltemplates/NewUserCreatedTemplate.js";
 
-const usuarioService = new UsuarioService();
+const usuarioService = UsuarioService.getInstance();
 
 export async function logInView(req, res) {
     if (req.session.login) {
@@ -71,3 +71,4 @@ export async function logOutView(req, res) {
         })
     }
 }
+ 

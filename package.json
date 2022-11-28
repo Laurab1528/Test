@@ -7,7 +7,9 @@
   "type": "module",
   "scripts": {
     "server": "node ./src/server.js",
-    "start": " node ./src/server.js"
+    "start": " node ./src/server.js",
+    "test": "jest",
+    "testReport": "jest --no-color 2>./testresults/TestResults_$(date +%F).txt"
   },
   "keywords": [],
   "license": "ISC",
@@ -29,7 +31,8 @@
     "session-file-store": "1.5.0"
   },
   "devDependencies": {
-    "eslint": "8.13.0"
+    "eslint": "8.13.0",
+    "jest": "28.1.3"
   },
   "repository": {
     "type": "git",
@@ -38,5 +41,8 @@
   "bugs": {
     "url": "https://github.com/Laurab1528/Performance/issues"
   },
-  "homepage": "https://github.com/Laurab1528/Performance#readme"
+  "homepage": "https://github.com/Laurab1528/Performance#readme",
+  "directories": {
+    "test": "test"
+  }
 }

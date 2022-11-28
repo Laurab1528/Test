@@ -24,3 +24,4 @@ export async function getRandomNumbers(req, res) {
     })
     randomNumbersGeneratorFork.send(cant);
 }
+ 

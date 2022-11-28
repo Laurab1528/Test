@@ -1,0 +1,41 @@
+FAIL test/controllers/other.test.js
+  ● [GET] test/info/ returns data correctly
+
+    connect ECONNREFUSED 127.0.0.1:3031
+
+
+
+FAIL test/controllers/product.test.js
+  ● [GET] api/productos/:non-existent-id returns product not found
+
+    TypeError: Cannot read properties of undefined (reading 'status')
+
+       5 |
+       6 |     const response = await axiosGet(nonExistentProductUrl);
+    >  7 |     expect(response.status).toBe(400)
+         |                     ^
+       8 |     expect(response.data).toHaveProperty('error', 'product not found')
+       9 |
+      10 | });
+
+      at Object.status (test/controllers/product.test.js:7:21)
+
+  ● [PUT] api/productos/:non-existent-id returns product not found or invalid body content
+
+    TypeError: Cannot read properties of undefined (reading 'status')
+
+      14 |     const body = {}
+      15 |     const response = await axiosPut(nonExistentProductUrl, body);
+    > 16 |     expect(response.status).toBe(404)
+         |                     ^
+      17 |     expect(response.data).toHaveProperty('error', 'product not found or invalid body content.')
+      18 |
+      19 | });
+
+      at Object.status (test/controllers/product.test.js:16:21)
+
+Test Suites: 2 failed, 2 total
+Tests:       3 failed, 3 total
+Snapshots:   0 total
+Time:        2.714 s, estimated 3 s
+Ran all test suites.
